@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -9,7 +10,6 @@ body {
 }
 
 .container {
-  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +27,8 @@ body {
 
 .torre-profile {
   width: 8rem;
-  height: 8rem;padding-left: 0.5rem;
+  height: 8rem;
+  padding-left: 0.5rem;
 }
 
 .card-list {
@@ -105,9 +106,8 @@ body {
 
 .add-button,
 .remove-button {
-  background-color: transparent;
   color: #333;
-  background-color: 2px solid #ffcc00;
+  background-color: 2px solid #fc0;
   border-radius: 4px;
   padding: 10px 20px;
   cursor: pointer;
@@ -117,7 +117,7 @@ body {
 
 .add-button:hover,
 .remove-button:hover {
-  background-color: #ffcc00;
+  background-color: #fc0;
   color: #333;
 }
 
