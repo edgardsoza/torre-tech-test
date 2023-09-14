@@ -74,12 +74,12 @@ const SearchBar = ({ onSearch }) => {
                     <div className="name-container">
                       <h3>{result.name}</h3>
                       {result.verified ? (
-                      <span style={{ marginLeft: '0.5em' }}>✓</span>
+                        <span style={{ marginLeft: '0.5em' }}>✓</span>
                       ) : null}
                     </div>
-                    <div className='professional-section'>
+                    <div className="professional-section">
                       <h3>{result.professionalHeadline}</h3>
-                      <button className="add-button" type="submit" onClick={() => addToFavorites(result)}>Save to Favorite</button>
+                      <button className="add-button" type="button" onClick={() => addToFavorites(result)}>Save to Favorite</button>
                     </div>
                   </li>
                 </div>
