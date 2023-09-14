@@ -1,12 +1,9 @@
 
 body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
   background-color: #fff;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -107,7 +104,7 @@ body {
 .add-button,
 .remove-button {
   color: #333;
-  background-color: 2px solid #fc0;
+  background-color: #fc0;
   border-radius: 4px;
   padding: 10px 20px;
   cursor: pointer;
