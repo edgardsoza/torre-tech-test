@@ -3,13 +3,15 @@ import React, { useState } from 'react';
 
 const FavoriteList = ({ favorites, addToFavorites, removeFromFavorites }) => {
   return (
-    <div>
-      <h2>Favorites</h2>
-      <ul>
+    <div className='favorite-container'>
+      <h1>Favorites</h1>
+      <ul className='favorite-list'>
         {favorites.map((favorite) => (
-          <li key={favorite.ggId}>
-            <span>{favorite.name}</span>
-            <button onClick={() => removeFromFavorites(favorite)}>Remove</button>
+          <li className="favorite-item" key={favorite.ggId}>
+            <a className='favorite-name' href={`https://torre.ai/${favorite.username}`} target="_blank" rel="noopener noreferrer">
+              <p>{favorite.name}</p>
+            </a>
+            <button className="remove-button" onClick={() => removeFromFavorites(favorite)}>Remove</button>
           </li>
         ))}
       </ul>

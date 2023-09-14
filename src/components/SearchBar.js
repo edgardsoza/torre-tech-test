@@ -20,7 +20,7 @@ const SearchBar = ({ onSearch }) => {
       if (query.trim() !== '') {
         handleSearch();
       }
-    }, 500);
+    }, 200);
     return () => clearTimeout(delayTimer);
   }, [query]);
 
@@ -41,7 +41,6 @@ const SearchBar = ({ onSearch }) => {
     if (!favorites.some((f) => f.ggId === favorite.ggId)) {
     setFavorites([...favorites, favorite]);
     }
-    console.log(localStorage)
 };
 
   const removeFromFavorites = (favoriteToRemove) => {
@@ -52,31 +51,38 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div>
+    <div className='container'>
       <FavoriteList favorites={favorites} removeFromFavorites={removeFromFavorites} />
       <input
+        className='input-box'
         type="text"
         placeholder="Search for individuals..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <div>
+      <div className='search-container'>
         {results.length > 0 ? (
-          <div>
+          <div className='cards-container'>
             <h2>Search Results</h2>
-            <ul style={{ listStyleType: 'none' }}>
+            <ul className='card-list'>
               {results.map((result) => (
-                <li key={result.ardaId}>
-                  <a href={`https://torre.ai/${result.username}`} target="_blank" rel="noopener noreferrer">
-                   <img src={result.imageUrl} alt='This is the profile presentation for the user' />
+                <div className="result-card" key={result.ardaId}>
+                <li className='card-properties'>
+                  <a className="profile-picture" href={`https://torre.ai/${result.username}`} target="_blank" rel="noopener noreferrer">
+                   <img className="torre-profile" src={result.imageUrl} alt='Profile image' />
                   </a>
+                  <div className='name-container'>
                   <h3>{result.name}</h3>
                   {result.verified ? (
                     <span style={{ marginLeft: '0.5em' }}>✓</span>
                     ) : null}
+                  </div>
+                  <div className='professional-section'>
                   <h3>{result.professionalHeadline}</h3>
-                  <button onClick={() => addToFavorites(result)}>Save to Favorite</button>
+                  <button className="add-button" onClick={() => addToFavorites(result)}>Save to Favorite</button>
+                  </div>
                 </li>
+              </div>
               ))}
             </ul>
           </div>
