@@ -39,9 +39,9 @@ const SearchBar = ({ onSearch }) => {
 
   const addToFavorites = (favorite) => {
     if (!favorites.some((f) => f.ggId === favorite.ggId)) {
-    setFavorites([...favorites, favorite]);
+      setFavorites([...favorites, favorite]);
     }
-};
+  };
 
   const removeFromFavorites = (favoriteToRemove) => {
     const updatedFavorites = favorites.filter(
