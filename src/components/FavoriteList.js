@@ -4,7 +4,7 @@ import React from 'react';
 const FavoriteList = ({ favorites, removeFromFavorites }) => {
   return (
     <div className="favorite-container">
-      <h1>Favorites</h1>
+      <h1>Favorite</h1>
       <ul className="favorite-list">
         {favorites.map((favorite) => (
           <li className="favorite-item" key={favorite.ggId}>
