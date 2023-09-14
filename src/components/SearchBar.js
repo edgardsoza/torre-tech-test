@@ -28,7 +28,7 @@ const SearchBar = ({ onSearch }) => {
     try {
       const response = await axios.post(
         'https://arda.torre.co/entities/_search/',
-        { query }
+        { query },
       );
       const firstTenResults = response.data.results.slice(0, 10);
       setResults(firstTenResults);
@@ -79,7 +79,7 @@ const SearchBar = ({ onSearch }) => {
                   </div>
                   <div className='professional-section'>
                     <h3>{result.professionalHeadline}</h3>
-                    <button className="add-button" onClick={() => addToFavorites(result)}>Save to Favorite</button>
+                    <button className="add-button" type="submit" onClick={() => addToFavorites(result)}>Save to Favorite</button>
                   </div>
                 </li>
               </div>
