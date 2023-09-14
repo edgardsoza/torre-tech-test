@@ -67,22 +67,22 @@ const SearchBar = ({ onSearch }) => {
             <ul className="card-list">
               {results.map((result) => (
                 <div className="result-card" key={result.ardaId}>
-                <li className="card-properties">
-                  <a className="profile-picture" href={`https://torre.ai/${result.username}`} target="_blank" rel="noopener noreferrer">
-                    <img className="torre-profile" src={result.imageUrl} alt="Profile image" />
-                  </a>
-                  <div className="name-container">
-                    <h3>{result.name}</h3>
-                    {result.verified ? (
-                    <span style={{ marginLeft: '0.5em' }}>✓</span>
-                    ) : null}
-                  </div>
-                  <div className='professional-section'>
-                    <h3>{result.professionalHeadline}</h3>
-                    <button className="add-button" type="submit" onClick={() => addToFavorites(result)}>Save to Favorite</button>
-                  </div>
-                </li>
-              </div>
+                  <li className="card-properties">
+                    <a className="profile-picture" href={`https://torre.ai/${result.username}`} target="_blank" rel="noopener noreferrer">
+                      <img className="torre-profile" src={result.imageUrl} alt="Profile image" />
+                    </a>
+                    <div className="name-container">
+                      <h3>{result.name}</h3>
+                      {result.verified ? (
+                      <span style={{ marginLeft: '0.5em' }}>✓</span>
+                      ) : null}
+                    </div>
+                    <div className='professional-section'>
+                      <h3>{result.professionalHeadline}</h3>
+                      <button className="add-button" type="submit" onClick={() => addToFavorites(result)}>Save to Favorite</button>
+                    </div>
+                  </li>
+                </div>
               ))}
             </ul>
           </div>
